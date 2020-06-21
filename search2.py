@@ -63,20 +63,20 @@ def res1(basa):
 	else:
 		print('File ', file_name,' not found.')
 
-def res2():
-	dt_file = read_exel_in_dict('avito_92052.xlsx')
-	dt_coord = {}
-	dt_sity = {}
-	for k in dt_file:
-		if dt_file[k].get('Широта') != None:
-			if is_valid_coord((dt_file[k]['Широта'], dt_file[k]['Долгота'])):
-				dt_coord[k] = dt_file[k]
-			else:
-				dt_sity[k] = dt_file[k]
-	dt_sity = validate_sity(dt_sity)
-	print(len(dt_coord), len(dt_sity))
-	dt_sity.update(dt_coord)
-	writin_new_exele('12345.xlsx', dt_sity)
+# def res2():
+# 	dt_file = read_exel_in_dict('avito_92052.xlsx')
+# 	dt_coord = {}
+# 	dt_sity = {}
+# 	for k in dt_file:
+# 		if dt_file[k].get('Широта') != None:
+# 			if is_valid_coord((dt_file[k]['Широта'], dt_file[k]['Долгота'])):
+# 				dt_coord[k] = dt_file[k]
+# 			else:
+# 				dt_sity[k] = dt_file[k]
+# 	dt_sity = validate_sity(dt_sity)
+# 	print(len(dt_coord), len(dt_sity))
+# 	dt_sity.update(dt_coord)
+# 	writin_new_exele('12345.xlsx', dt_sity)
 
 def move_to(file_name, to_directory, from_directory=None):
 	if from_directory:
